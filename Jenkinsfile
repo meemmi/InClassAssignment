@@ -1,5 +1,11 @@
 pipeline {
     agent any
+        environment {
+                PATH = "C:\\Program Files\\Docker\\Docker\\resources\\bin;${env.PATH}"
+                DOCKERHUB_CREDENTIALS_ID = 'Docker_Hub'
+                DOCKERHUB_REPO = 'meemmi/inclass'
+                DOCKER_IMAGE_TAG = 'latest'
+            }
     tools {
     maven 'Maven1'
     }
@@ -35,5 +41,8 @@ pipeline {
                 jacoco()
             }
         }
+
+        // create docker image from docker file
+        // push docker image to docker hub
     }
 }
