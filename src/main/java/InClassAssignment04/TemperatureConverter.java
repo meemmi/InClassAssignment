@@ -26,12 +26,15 @@ public class TemperatureConverter {
     public static void main(String[] args) {
         TemperatureConverter converter = new TemperatureConverter();
         double fahrenheit = 100;
-        converter.fahrenheitToCelsius(fahrenheit);
+        double celsiusF = converter.fahrenheitToCelsius(fahrenheit);
+        System.out.printf("100 Fahrenheit -> celcius %.2f%n", celsiusF);
 
         double kelvin = 300;
-        converter.kelvinToCelsius(kelvin);
+        double celciusK = converter.kelvinToCelsius(kelvin);
+        System.out.printf("300 Kelvin -> celcius: %.2f%n", celciusK);
 
-        converter.isExtremeTemperature(-50);
+        boolean extremeTemp = converter.isExtremeTemperature(-50);
+        System.out.println("Extreme temperature: " + extremeTemp);
 
 
     }
